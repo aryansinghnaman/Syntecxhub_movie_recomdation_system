@@ -1,10 +1,13 @@
+import os
 import pandas as pd
 import ast
 import pickle
 
+
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
+os.makedirs("models", exist_ok=True)
 # Load datasets
 movies = pd.read_csv("dataset/movies.csv")
 credits = pd.read_csv("dataset/credits.csv")
