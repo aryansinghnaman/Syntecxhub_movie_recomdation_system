@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>MovieVerse AI</title>
+
+<meta name="description"
+content="AI Powered Movie Recommendation System">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="{{ url_for('static',filename='css/style.css') }}">
+
+<link rel="stylesheet"
+href="{{ url_for('static',filename='css/animation.css') }}">
+
+</head>
+
+<body>
+
+<div class="background">
+
+<div class="aurora aurora1"></div>
+
+<div class="aurora aurora2"></div>
+
+<div class="aurora aurora3"></div>
+
+<div class="grid"></div>
+
+<div id="particles"></div>
+
+</div>
+
+<div class="cursor-glow"></div>
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-film"></i>
+
+<span>
+
+MovieVerse AI
+
+</span>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="#home">
+
+Home
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#recommend">
+
+Recommend
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#features">
+
+Features
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#about">
+
+About
+
+</a>
+
+</li>
+
+</ul>
+<button id="themeToggle" class="theme-btn">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+<button class="github-btn">
+
+<i class="fa-brands fa-github"></i>
+
+GitHub
+
+</button>
+
+</nav>
+
+</header>
+
+<main>
+
+<section
+class="hero"
+id="home">
+
+<div class="hero-left">
+
+<div class="badge">
+
+<i class="fa-solid fa-sparkles"></i>
+
+Next Generation AI Recommendation Engine
+
+</div>
+
+<h1>
+
+Find Your Next
+
+<span>
+
+Favourite Movie
+
+</span>
+
+Using Artificial Intelligence
+
+</h1>
+
+<p>
+
+MovieVerse AI intelligently analyzes movie genres,
+cast, overview, keywords and directors using
+Machine Learning and Cosine Similarity to generate
+high-quality personalized movie recommendations.
+
+</p>
+
+<form
+id="movieForm"
+class="search-form">
+
+<div class="search-box">
+<div id="suggestions" class="suggestions"></div>
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+
+id="movieInput"
+
+type="text"
+
+placeholder="Search a movie..."
+
+required>
+
+</div>
+
+<button type="submit">
+
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+
+Recommend
+
+</button>
+
+</form>
+
+<div class="hero-stats">
+
+<div class="stat-card">
+
+<h2>
+
+4806+
+
+</h2>
+
+<span>
+
+Movies
+
+</span>
+
+</div>
+
+<div class="stat-card">
+
+<h2>
+
+AI
+
+</h2>
+
+<span>
+
+Recommendation
+
+</span>
+
+</div>
+
+<div class="stat-card">
+
+<h2>
+
+Instant
+
+</h2>
+
+<span>
+
+Results
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right desktop-only">
+
+<div class="orb-container">
+
+<div class="ring ring1"></div>
+
+<div class="ring ring2"></div>
+
+<div class="ring ring3"></div>
+
+<div class="core">
+
+<i class="fa-solid fa-brain"></i>
+
+</div>
+
+<div class="floating floating1">
+
+🎬
+
+</div>
+
+<div class="floating floating2">
+
+🍿
+
+</div>
+
+<div class="floating floating3">
+
+⭐
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section
+
+class="recommend-section"
+
+id="recommend">
+
+<div class="section-title">
+
+<span>
+
+AI GENERATED RECOMMENDATIONS
+
+</span>
+
+<h2>
+
+Movies You Will Love
+
+</h2>
+
+<p>
+
+Recommendations generated using Machine Learning,
+TF-IDF Vectorization and Cosine Similarity.
+
+</p>
+
+</div>
+
+<div
+
+id="movie-grid"
+
+class="movie-grid">
+
+</div>
+
+</section>
+
+<!-- ================= HOW AI WORKS ================= -->
+
+<section
+class="how-it-works"
+id="about">
+
+<div class="section-title">
+
+<span>
+
+HOW IT WORKS
+
+</span>
+
+<h2>
+
+AI Recommendation Process
+
+</h2>
+
+<p>
+
+MovieVerse AI follows a powerful recommendation pipeline
+to discover movies similar to your favourite one.
+
+</p>
+
+</div>
+
+<div class="process-grid">
+
+<div class="process-card">
+
+<div class="process-icon">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<h3>
+
+Search Movie
+
+</h3>
+
+<p>
+
+Enter any movie available in the TMDB dataset.
+
+</p>
+
+</div>
+
+<div class="process-card">
+
+<div class="process-icon">
+
+<i class="fa-solid fa-brain"></i>
+
+</div>
+
+<h3>
+
+AI Analysis
+
+</h3>
+
+<p>
+
+The AI compares genres, overview, keywords,
+cast and director using TF-IDF and Cosine Similarity.
+
+</p>
+
+</div>
+
+<div class="process-card">
+
+<div class="process-icon">
+
+<i class="fa-solid fa-film"></i>
+
+</div>
+
+<h3>
+
+Get Recommendations
+
+</h3>
+
+<p>
+
+Receive six highly relevant movie recommendations
+instantly with AI confidence scores.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section
+class="features"
+id="features">
+
+<div class="section-title">
+
+<span>
+
+WHY MOVIEVERSE AI
+
+</span>
+
+<h2>
+
+Built For Movie Lovers
+
+</h2>
+
+</div>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-robot"></i>
+
+</div>
+
+<h3>
+
+AI Engine
+
+</h3>
+
+<p>
+
+Powered by Machine Learning for intelligent movie discovery.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-bolt"></i>
+
+</div>
+
+<h3>
+
+Lightning Fast
+
+</h3>
+
+<p>
+
+Recommendations generated within seconds.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+<i class="fa-solid fa-layer-group"></i>
+
+</div>
+
+<h3>
+
+Rich Dataset
+
+</h3>
+
+<p>
+
+Built using the TMDB 5000 Movies Dataset.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= TECHNOLOGY ================= -->
+
+<section
+class="tech-stack">
+
+<div class="section-title">
+
+<span>
+
+TECHNOLOGY STACK
+
+</span>
+
+<h2>
+
+Powered By Modern Technologies
+
+</h2>
+
+<p>
+
+A combination of Machine Learning, Flask and modern web technologies.
+
+</p>
+
+</div>
+
+<div class="tech-grid">
+
+<div class="tech-card">
+
+<i class="fa-brands fa-python"></i>
+
+<h3>Python</h3>
+
+<p>Backend & Machine Learning</p>
+
+</div>
+
+<div class="tech-card">
+
+<i class="fa-solid fa-fire"></i>
+
+<h3>Flask</h3>
+
+<p>Web Framework</p>
+
+</div>
+
+<div class="tech-card">
+
+<i class="fa-solid fa-brain"></i>
+
+<h3>TF-IDF</h3>
+
+<p>Feature Extraction</p>
+
+</div>
+
+<div class="tech-card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Cosine Similarity</h3>
+
+<p>Recommendation Engine</p>
+
+</div>
+
+<div class="tech-card">
+
+<i class="fa-solid fa-database"></i>
+
+<h3>TMDB Dataset</h3>
+
+<p>4800+ Movies</p>
+
+</div>
+
+<div class="tech-card">
+
+<i class="fa-solid fa-code"></i>
+
+<h3>HTML • CSS • JS</h3>
+
+<p>Interactive User Interface</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-container">
+
+<h2>
+
+MovieVerse AI
+
+</h2>
+
+<p>
+
+Discover movies through the power of Artificial Intelligence.
+
+</p>
+
+<div class="footer-social">
+
+<a href="#">
+
+<i class="fa-brands fa-github"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fa-brands fa-linkedin"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fa-solid fa-envelope"></i>
+
+</a>
+
+</div>
+
+<p class="copyright">
+
+© 2026 MovieVerse AI
+
+Developed by Aryan Singh
+
+</p>
+
+</div>
+
+</footer>
+
+</main>
+
+<script src="{{ url_for('static',filename='js/app.js') }}"></script>
+
+</body>
+
+</html>

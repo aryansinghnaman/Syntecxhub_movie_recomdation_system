@@ -1,0 +1,391 @@
+/* ===========================================
+            MOVIEVERSE AI ANIMATIONS
+===========================================*/
+
+/* ---------- Fade Up ---------- */
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ---------- Blob ---------- */
+
+@keyframes blobFloat{
+
+0%{
+
+transform:translate(0px,0px) scale(1);
+
+}
+
+25%{
+
+transform:translate(30px,-40px) scale(1.08);
+
+}
+
+50%{
+
+transform:translate(-20px,20px) scale(.96);
+
+}
+
+75%{
+
+transform:translate(25px,-15px) scale(1.04);
+
+}
+
+100%{
+
+transform:translate(0px,0px) scale(1);
+
+}
+
+}
+
+/* ---------- Ring ---------- */
+
+@keyframes ringRotate{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ---------- Floating ---------- */
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ---------- Pulse ---------- */
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(.95);
+
+opacity:.8;
+
+}
+
+70%{
+
+transform:scale(1.2);
+
+opacity:0;
+
+}
+
+100%{
+
+transform:scale(1.2);
+
+opacity:0;
+
+}
+
+}
+
+/* ---------- Glow ---------- */
+
+@keyframes glow{
+
+0%{
+
+box-shadow:
+
+0 0 20px rgba(6,182,212,.15);
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 60px rgba(6,182,212,.45);
+
+}
+
+100%{
+
+box-shadow:
+
+0 0 20px rgba(6,182,212,.15);
+
+}
+
+}
+
+/* ---------- Shine ---------- */
+
+@keyframes shine{
+
+0%{
+
+left:-150%;
+
+}
+
+100%{
+
+left:150%;
+
+}
+
+}
+
+/* ---------- Background ---------- */
+
+@keyframes gradientMove{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+
+/* ===========================================
+            APPLY ANIMATIONS
+===========================================*/
+
+.hero{
+
+animation:
+
+fadeUp 1s ease;
+
+}
+
+.badge{
+
+animation:
+
+fadeUp 1s ease;
+
+}
+
+.hero h1{
+
+animation:
+
+fadeUp 1.1s ease;
+
+}
+
+.hero p{
+
+animation:
+
+fadeUp 1.2s ease;
+
+}
+
+.search-form{
+
+animation:
+
+fadeUp 1.3s ease;
+
+}
+
+.hero-stats{
+
+animation:
+
+fadeUp 1.4s ease;
+
+}
+
+/* Brain */
+
+.core{
+
+animation:
+
+float 5s ease-in-out infinite,
+
+glow 3s infinite;
+
+}
+
+/* Floating Icons */
+
+.floating{
+
+animation:
+
+float 4s ease-in-out infinite;
+
+}
+
+.floating2{
+
+animation-delay:1s;
+
+}
+
+.floating3{
+
+animation-delay:2s;
+
+}
+
+/* Aurora */
+
+.aurora{
+
+animation:
+
+blobFloat 15s ease-in-out infinite;
+
+}
+
+/* Cards */
+
+.movie-card{
+
+animation:
+
+fadeUp .8s ease;
+
+transition:
+
+.4s;
+
+}
+
+.movie-card:nth-child(2){
+
+animation-delay:.1s;
+
+}
+
+.movie-card:nth-child(3){
+
+animation-delay:.2s;
+
+}
+
+.movie-card:nth-child(4){
+
+animation-delay:.3s;
+
+}
+
+.movie-card:nth-child(5){
+
+animation-delay:.4s;
+
+}
+
+.movie-card:nth-child(6){
+
+animation-delay:.5s;
+
+}
+
+/* Feature Cards */
+
+.feature-card,
+
+.process-card,
+
+.tech-card{
+
+transition:
+
+.45s;
+
+}
+
+.feature-card:hover,
+
+.process-card:hover,
+
+.tech-card:hover{
+
+transform:
+
+translateY(-12px);
+
+}
+
+/* Button */
+
+.search-form button{
+
+animation:
+
+glow 3s infinite;
+
+}
+
+/* Navbar */
+
+.navbar{
+
+animation:
+
+fadeUp .8s ease;
+
+}
