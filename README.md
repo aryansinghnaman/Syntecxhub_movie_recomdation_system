@@ -215,20 +215,23 @@ https://syntecxhub-movie-recomdation-system.onrender.com
 
 ---
 
-# 📸 Screenshots
+## 📸 Screenshots
 
-> Add screenshots here after submission.
+### 🏠 Home Page
 
-Example:
-
-```
-screenshots/home.png
-screenshots/search.png
-screenshots/recommendations.png
-screenshots/darkmode.png
-```
+![Home](home.png)
 
 ---
+
+### 🎬 Recommendations
+
+![Recommendation](recommendation.png)
+
+---
+
+### 🔍 Search
+
+![Search](search.png)
 
 # 🔮 Future Improvements
 
